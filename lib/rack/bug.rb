@@ -1,4 +1,5 @@
 require "rack"
+$:.unshift File.join(File.dirname(__FILE__), "..")
 
 module Rack::Bug
   require "rack/bug/toolbar"
