@@ -129,7 +129,11 @@ module Rack
       
       def inject_toolbar
         full_body = @response.body.join
-        full_body.sub! /<\/body>/, render + "</body>"
+        if full_body =~ /<\/body>/
+          full_body.sub! /<\/body>/, render + "</body>"
+        else
+          full_body << render
+        end
         
         @response["Content-Length"] = full_body.size.to_s
         @response.body = [full_body]
