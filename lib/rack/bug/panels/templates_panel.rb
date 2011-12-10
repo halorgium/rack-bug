@@ -10,11 +10,11 @@ module Rack
       def self.record(template)
         return yield unless Rack::Bug.enabled?
 
-        template_trace.start(template)
+        template_trace.start(template, Time.now)
         begin
           result = yield
         ensure
-          template_trace.finished(template)
+          template_trace.finished(template, Time.now)
         end
         return result
       end

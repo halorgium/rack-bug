@@ -4,15 +4,15 @@ module Rack
 
       class Trace
 
-        def start(template_name)
+        def start(template_name, time)
           rendering = Rendering.new(template_name)
-          rendering.start_time = Time.now
+          rendering.start_time = time
           @current.add(rendering)
           @current = rendering
         end
 
-        def finished(template_name)
-          @current.end_time = Time.now
+        def finished(template_name, time)
+          @current.end_time = time
           @current = @current.parent
         end
 
