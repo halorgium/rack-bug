@@ -64,7 +64,7 @@ class Rack::Bug
 
     def initialize_options(options={})
       @default_options = {
-        'rack-bug.ip_masks' => [IPAddr.new("127.0.0.1")],
+        'rack-bug.ip_masks' => [IPAddr.new("127.0.0.1"), IPAddr.new("::1")],
         'rack-bug.password' => nil,
         'rack-bug.verbose'  => nil,
         'rack-bug.secret_key' => nil,
