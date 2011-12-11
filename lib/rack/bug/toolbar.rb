@@ -55,7 +55,7 @@ module Rack
       end
 
       def render
-        render_template("toolbar", :panels => @env["rack-bug.panels"].reverse)
+        render_template("toolbar", :show_on_top => @env["rack-bug.show_on_top"], :panels => @env["rack-bug.panels"].reverse)
       end
 
     end

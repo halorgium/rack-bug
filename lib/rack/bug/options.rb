@@ -69,6 +69,7 @@ class Rack::Bug
         'rack-bug.verbose'  => nil,
         'rack-bug.secret_key' => nil,
         'rack-bug.intercept_redirects' => false,
+        'rack-bug.show_on_top' => true,
         'rack-bug.panels' => [],
         'rack-bug.panel_classes' => [
           RailsInfoPanel,
